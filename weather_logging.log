@@ -1,0 +1,4 @@
+INFO:my_logger:humidity is increasing
+INFO:my_logger:Maximum humidity : 99.947556
+INFO:my_logger:Minimum humidity : 84.86319
+INFO:my_logger:Average humidity : 83.53137272767864
