@@ -1,0 +1,3 @@
+Maximum : 4.0
+Minimum : 0
+Average : 4.0
