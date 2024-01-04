@@ -43,6 +43,7 @@ def analyze_data(output_file_path):
     maximum, minimum, sums = 0, 0, 0
     increasing = 0
     decreasing = 0
+    last_item = 0
     for x in all_data:
         for y in x:
             if float(y) > maximum:
@@ -51,10 +52,12 @@ def analyze_data(output_file_path):
                 float(y) < minimum
                 minimum = float(y)
             sums += float(y)
-            if float(y) > increasing:
-                increasing = increasing + float(y)
+
+            if last_item > float(y):
+                increasing += 1
             else:
-                decreasing = decreasing + float(y)
+                decreasing += 1
+        last_item = float(y)
     average = sums / len(all_data)
 
     with open(output_file_path, 'w') as new_file:
@@ -62,9 +65,9 @@ def analyze_data(output_file_path):
         new_file.write(f"Minimum : {minimum}\n ")
         new_file.write(f"Average : {average}\n ")
         if increasing > decreasing:
-            new_file.write("Trending increasing")
+            new_file.write("varriance increasing")
         else:
-            new_file.write("Trending decreasing")
+            new_file.write("varriance decreasing")
 
 
 @click.command()

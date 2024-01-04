@@ -1,4 +1,4 @@
-Maximum : 32.112724
- Minimum : 5.1919937
- Average : 10.734510309999996
- Trending decreasing
+Maximum : 12.5602455
+ Minimum : 12.300245
+ Average : 6.6150369625000005
+ varriance decreasing
