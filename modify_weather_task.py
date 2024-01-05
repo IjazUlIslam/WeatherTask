@@ -35,7 +35,7 @@ def analyze_data(output_file_path):
         csv_read = csv.reader(csv_file)
         all_data = []
         for row in csv_read:
-            all_data.append(row)
+            all_data.append(row[0])
         if not all_data:
             raise ValueError("first you need to import data in file")
 
@@ -44,19 +44,18 @@ def analyze_data(output_file_path):
     increasing = 0
     decreasing = 0
     last_item = 0
-    for x in all_data:
-        for y in x:
-            if float(y) > maximum:
-                maximum = float(y)
-            else:
-                float(y) < minimum
-                minimum = float(y)
-            sums += float(y)
+    for y in all_data:
+        if float(y) > maximum:
+            maximum = float(y)
+        else:
+            float(y) < minimum
+            minimum = float(y)
+        sums += float(y)
 
-            if last_item > float(y):
-                increasing += 1
-            else:
-                decreasing += 1
+        if last_item > float(y):
+            increasing += 1
+        else:
+            decreasing += 1
         last_item = float(y)
     average = sums / len(all_data)
 
